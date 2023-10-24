@@ -39,11 +39,11 @@ jobs:
         env:
            DOCKER_CLI_ACI: 1
   deploy:    
-        needs: build-analyze-scan  
+   needs: build-analyze-scan  
         runs-on: [aws-netflix]  
         steps:
              - name: Pull the docker image
-                run: docker pull maxjith/netflix:latest
+               run: docker pull maxjith/netflix:latest
              - name: Trivy image scan
                run: trivy image maxjith/netflix:latest
              - name: Run the container netflix
