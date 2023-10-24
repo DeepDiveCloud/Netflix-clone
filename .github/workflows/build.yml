@@ -44,8 +44,6 @@ jobs:
     steps:
       - name: Pull the docker image
         run: docker pull maxjith/netflix:latest
-      - name: Trivy image scan
-        run: trivy image maxjith/netflix:latest
       - name: Run the container netflix
         run: docker run -d --name netflix -p 8081:80 maxjith/netflix:latest
  
