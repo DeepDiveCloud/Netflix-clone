@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  build:
+  build-analyze-scan:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -38,9 +38,9 @@ jobs:
            docker push maxjith/netflix:latest  
         env:
            DOCKER_CLI_ACI: 1
-  deploy:    
-    needs:  Build-and-push  
-    runs-on: [aws-netflix]  
+  deploy:  
+    needs: build-analyze-scan    
+    runs-on: [aws-netfilx]  
     steps:
       - name: Pull the docker image
         run: docker pull maxjith/netflix:latest
