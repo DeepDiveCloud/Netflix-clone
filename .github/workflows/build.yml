@@ -37,7 +37,7 @@ jobs:
            DOCKER_CLI_ACI: 1
   deploy:  
     needs: build-analyze-scan    
-    runs-on: [aws-netfilx]  
+    runs-on: [netfilx]  
     steps:
       - name: Pull the docker image
         run: docker pull maxjith/netflix:latest
